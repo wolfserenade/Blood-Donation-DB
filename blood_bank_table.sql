@@ -3,5 +3,5 @@ CREATE TABLE blood_bank_patient_info(
   first_name varchar,
   date_of_birth varchar,
   id int,
-  blood_type
+  blood_type varchar
   );
