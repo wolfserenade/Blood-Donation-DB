@@ -5,3 +5,4 @@ CREATE TABLE blood_bank_patient_info(
   id int,
   blood_type varchar
   );
+fwefgwfgwer
