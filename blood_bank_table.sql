@@ -40,18 +40,34 @@ INSERT INTO blood_bank('blood_bank_id', 'name', 'address', 'city', 'state', 'zip
   ('Salem''s Hospital', '789 Broom Street', 'Salem', 'MA', 346457, 'USA');
 
 CREATE TABLE blood_bank_visit(
-  bank_id VARCHAR,
-  donor_id VARCHAR,
+  blood_bank_visit_id SERIAL PRIMARY KEY,
+  blood_bank_id INT,
+  donor_id INT,
   visit_date DATE,
-  blood_type VARCHAR,
-  ml_blood_donated INT
+  blood_type blood_type,
+  ml_blood_donated DECIMAL,
+  CONSTRAINT fk_blood_bank
+    FOREIGN KEY (blood_bank_id)
+      REFERENCES blood_bank(blood_bank_id),
+  CONSTRAINT fk_donor
+    FOREIGN KEY (donor_id)
+      REFERENCES donor(donor_id)
   );
 
-
+INSERT INTO blood_bank_visit ('bank_id', 'donor_id', visit_date, blood_type, ml_blood_donated) VALUES
+  ()
 
 
 /*
 calculate the average liters of blood each blood bank gets per blood type, per week
+
+which blood bank has the most donors
+
+how many donors are female/male
+
+
+
+
 */
 
 
