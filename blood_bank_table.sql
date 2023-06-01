@@ -68,10 +68,6 @@ INSERT INTO blood_bank_visit (blood_bank_id, donor_id, visit_date, blood_type, m
   
 
 
-/*
-calculate the average liters of blood each blood bank gets per blood type, per week
-
-*/
 
 /* How many donors are female/male? */
 
@@ -83,9 +79,15 @@ GROUP BY gender
 
 /* Which blood bank has the most donors? */
 
-SELECT 
+SELECT blood_bank_visit_id,
+  COUNT (1)
+FROM blood_bank,
+  JOIN blood_bank_visit
+    ON blood_bank.id = blood_bank_visit.blood_bank_id
+GROUP BY blood_bank_visit_id
 
+
+/*  */
 /*       */
 /*       */
-/*       */
-/*       */
+/* Calculate the average liters of blood each blood bank gets per blood type, per week. */
