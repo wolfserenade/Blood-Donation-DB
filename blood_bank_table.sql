@@ -34,10 +34,10 @@ CREATE TABLE blood_bank(
   );
 
 INSERT INTO blood_bank('blood_bank_id', 'name', 'address', 'city', 'state', 'zip_code', 'country') VALUES
-  ('New York Blood', '1234 Fun Street', 'New York', 'NY' 10001, 'USA'),
-  ('New Jersey Gives Blood','987 Bored Street', 'Weehawken', 'NJ', 09234, 'USA'),
-  ('Connecticut Hospital', '345 Main Street', 'Hartfort', 'CT', 34562, 'USA'),
-  ('Salem''s Hospital', '789 Broom Street', 'Salem', 'MA', 346457, 'USA');
+  (01,'New York Blood', '1234 Fun Street', 'New York', 'NY' 10001, 'USA'),
+  (02,'New Jersey Gives Blood','987 Bored Street', 'Weehawken', 'NJ', 09234, 'USA'),
+  (03,'Connecticut Hospital', '345 Main Street', 'Hartfort', 'CT', 34562, 'USA'),
+  (04,'Salem''s Hospital', '789 Broom Street', 'Salem', 'MA', 346457, 'USA');
 
 CREATE TABLE blood_bank_visit(
   blood_bank_visit_id SERIAL PRIMARY KEY,
@@ -54,20 +54,38 @@ CREATE TABLE blood_bank_visit(
       REFERENCES donor(donor_id)
   );
 
-INSERT INTO blood_bank_visit ('bank_id', 'donor_id', visit_date, blood_type, ml_blood_donated) VALUES
-  ()
+INSERT INTO blood_bank_visit (blood_bank_id, donor_id, visit_date, blood_type, ml_blood_donated) VALUES
+  (01, 1, 2020/01/12, 'A-', 470)
+  (01, 10, 2020/01/12, 'A', 470)
+  (03, 8, 2020/01/12'AB+', 460)
+  (04, 2, 2020/01/12, 'A-', 480)
+  (02, 4, 2020/01/13, 'O', 490)
+  (03, 9, 2020/01/15,'AB-', 470)
+  (04, 3, 2020/01/18, 'A',470)
+  (03, 6, 2020/01/19,'B', 490)
+  (03, 5, 2020/01/25,'B-', 470)
+  (01, 7, 2020/01/25, 'AB+', 480);
+  
 
 
 /*
 calculate the average liters of blood each blood bank gets per blood type, per week
 
-which blood bank has the most donors
-
-how many donors are female/male
-
-
-
-
 */
 
+/* How many donors are female/male? */
 
+SELECT gender,
+  COUNT (1)
+FROM donor
+GROUP BY gender
+
+
+/* Which blood bank has the most donors? */
+
+SELECT 
+
+/*       */
+/*       */
+/*       */
+/*       */
