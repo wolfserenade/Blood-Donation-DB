@@ -9,3 +9,4 @@ Insert INTO donor(donor_id, last_name, first_name, date_of_birth, gender, blood_
   (8, 'Josenstein', 'Janice', '01/01/2001', 'F', 'AB+', 'josenstein.janice@gmail.com'),
   (9, 'Burke', 'Richard', '03/30/1999', 'M', 'AB-', 'burke.richard@gmail.com'),
   (10, 'Becker', 'Pete', '07/13/1992', 'M', 'A', 'becker.pete@gmail.com');
+  
